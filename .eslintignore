@@ -1,0 +1,5 @@
+node_modules/*
+configs/*
+scripts/*
+lib/*
+dist/*
