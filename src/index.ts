@@ -1,1 +1,1 @@
-export { PixiStatsPlugin } from './com/koreez/pixistats/PixiStatsPlugin';
+export { PixiStatsPlugin } from './PixiStatsPlugin';
