@@ -11,13 +11,15 @@ export class PIXIStats {
     public constructor(application: PIXI.Application) {
         this._application = application;
         const { gl, texture } = this._application.renderer;
-        this._glStats = new GLStats(gl);
-        this._textureStats = new TextureStats(gl, texture.managedTextures);
-        this._lastDrawCalls = this.drawCalls;
+        if (gl && texture) {
+            this._glStats = new GLStats(gl);
+            this._textureStats = new TextureStats(gl, texture.managedTextures);
+            this._lastDrawCalls = this.drawCalls;
+        }
     }
 
     public get drawCalls(): number {
-        return this._glStats.drawPasses;
+        return this._glStats ? this._glStats.drawPasses : 0;
     }
 
     public get maxDeltaDrawCalls(): number {
@@ -33,11 +35,11 @@ export class PIXIStats {
     }
 
     public get maxTextureCount(): number {
-        return this._textureStats.maxTexturesCount;
+        return this._textureStats ? this._textureStats.maxTexturesCount : 0;
     }
 
     public get texturesCount(): number {
-        return this._textureStats.currentTextureCount;
+        return this._textureStats ? this._textureStats.currentTextureCount : 0;
     }
 
     public reset(): void {
