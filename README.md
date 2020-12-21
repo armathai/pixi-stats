@@ -15,9 +15,7 @@ $ yarn add @armathai/pixi-stats # for yarn users
 # Using
 
 ```javascript
-import { PixiStatsPlugin } from '@armathai/pixi-stats';
-
-PIXI.Application.registerPlugin(PixiStatsPlugin);
+import from '@armathai/pixi-stats';
 
 class Game extends PIXI.Application {
     public constructor() {
