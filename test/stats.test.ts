@@ -1,4 +1,4 @@
-test('Stats Grid', done => {
+test('Stats Grid', (done) => {
     // Nothing to do
     done();
 });

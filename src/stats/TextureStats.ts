@@ -43,9 +43,9 @@ export class TextureStats {
     }
 
     private _collectUsedTextures(managedTextures: ManagedTexture[]): void {
-        managedTextures.forEach(txr => {
+        managedTextures.forEach((txr) => {
             const glTextures: GLTexture[] = txr._glTextures;
-            glTextures.forEach(glTexture => {
+            glTextures.forEach((glTexture) => {
                 this._registerTexture(glTexture.texture);
             });
         });

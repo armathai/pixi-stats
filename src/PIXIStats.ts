@@ -1,7 +1,7 @@
 import { GLStats } from './stats/GLStats';
 import { TextureStats } from './stats/TextureStats';
 
-export class PIXIStats {
+export class PixiStats {
     private _lastDrawCalls = -1;
     private _maxDeltaDrawCalls = -1;
     private _glStats: GLStats;

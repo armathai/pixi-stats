@@ -1,13 +1,14 @@
 import Stats from 'stats.js';
-import { PIXIStats } from './PIXIStats';
+import { IPixiStatsAdapter } from './IPixiStatsAdapter';
+import { PixiStats } from './PixiStats';
 
-export class PixiStatsAdapter implements PixiStats {
+export class PixiStatsAdapter implements IPixiStatsAdapter {
     private _stats: Stats = new Stats();
-    private _pixiStats: PIXIStats;
+    private _pixiStats: PixiStats;
     private _drawCallsPanel: Stats.Panel;
     private _texturesCountPanel: Stats.Panel;
 
-    public constructor(pixiStats: PIXIStats) {
+    public constructor(pixiStats: PixiStats) {
         this._pixiStats = pixiStats;
         this._drawCallsPanel = this.addPanel(new Stats.Panel('DC:', '#FFFA9A', '#38372A'));
         this._texturesCountPanel = this.addPanel(new Stats.Panel('T:', '#FFF2DF', '#B27D35'));
