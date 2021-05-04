@@ -1,3 +1,4 @@
+import { Application, Renderer } from 'pixi.js';
 import { GLStats } from './stats/GLStats';
 import { TextureStats } from './stats/TextureStats';
 
@@ -6,11 +7,11 @@ export class PixiStats {
     private _maxDeltaDrawCalls = -1;
     private _glStats: GLStats;
     private _textureStats: TextureStats;
-    private _application: PIXI.Application;
+    private _application: Application;
 
-    public constructor(application: PIXI.Application) {
+    public constructor(application: Application) {
         this._application = application;
-        const { gl, texture } = this._application.renderer;
+        const { gl, texture } = this._application.renderer as Renderer;
         if (gl && texture) {
             this._glStats = new GLStats(gl);
             this._textureStats = new TextureStats(gl, texture.managedTextures);

@@ -1,14 +1,16 @@
-/// <reference types="pixi.js" />
+import { Application } from 'pixi.js';
 import { PixiStats } from './PixiStats';
 import { PixiStatsAdapter } from './PixiStatsAdapter';
 
 export class PixiStatsPlugin {
-    public static init(this: PIXI.Application & { stats: PixiStatsAdapter }): void {
-        const pixiStats = new PixiStats(this);
-        this.stats = new PixiStatsAdapter(pixiStats);
+    private _stats: PixiStatsAdapter;
+
+    public constructor(app: Application) {
+        const pixiStats = new PixiStats(app);
+        this._stats = new PixiStatsAdapter(pixiStats);
     }
 
-    public static destroy(): void {
-        void 0;
+    public get stats(): PixiStatsAdapter {
+        return this._stats;
     }
 }

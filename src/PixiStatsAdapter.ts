@@ -1,8 +1,7 @@
 import Stats from 'stats.js';
-import { IPixiStatsAdapter } from './IPixiStatsAdapter';
 import { PixiStats } from './PixiStats';
 
-export class PixiStatsAdapter implements IPixiStatsAdapter {
+export class PixiStatsAdapter {
     private _stats: Stats = new Stats();
     private _pixiStats: PixiStats;
     private _drawCallsPanel: Stats.Panel;
