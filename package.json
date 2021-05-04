@@ -4,7 +4,7 @@
     "description": "Pixi Performance Monitor",
     "main": "dist/pixi-stats.cjs.js",
     "module": "dist/pixi-stats.esm.js",
-    "types": "dist/types/src/index.d.ts",
+    "types": "dist/types/index.d.ts",
     "scripts": {
         "build": "rollup -c && tsc",
         "dev": "rollup -c -w",
@@ -53,6 +53,7 @@
     ],
     "dependencies": {
         "@babel/runtime": "^7.14.0",
+        "core-js": "^3.11.2",
         "pixi.js": "^6.0.2",
         "stats.js": "^0.17.0"
     }
