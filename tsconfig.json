@@ -1,12 +1,14 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es6",
         "outDir": "dist/types",
         "preserveConstEnums": true,
         "declaration": true,
         "emitDeclarationOnly": true,
+        "rootDir": "src",
+        "skipLibCheck": true,
         "allowSyntheticDefaultImports": true,
-        "skipLibCheck": true
+        "moduleResolution": "Node"
     },
-    "exclude": ["test", "dist"]
+    "files": ["src/index.ts"]
 }
