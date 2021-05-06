@@ -1,6 +1,6 @@
 {
     "name": "@armathai/pixi-stats",
-    "version": "3.0.0",
+    "version": "3.1.0",
     "description": "Pixi Performance Monitor",
     "main": "dist/pixi-stats.cjs.js",
     "module": "dist/pixi-stats.esm.js",
